@@ -16,7 +16,7 @@ app.use(express.json());
 
 // cors 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: process.env.BASE_URL,
   credentials:true,
 }));
 
@@ -36,5 +36,5 @@ if(process.env.NODE_ENV == "production"){
 }
 
 app.listen(process.env.PORT || 5000, () => {
-  console.log(`server is started at port ${process.env.PORT}`);
+  console.log(`server is started at port ${process.env.PORT || 5000}`);
 });
